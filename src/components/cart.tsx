@@ -14,10 +14,10 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from './ui/separator';
-import { ShoppingCart, Trash2, Plus, Minus } from 'lucide-react';
+import { ShoppingCart, Trash2, Plus, Minus, Loader2 } from 'lucide-react';
 
 export default function Cart() {
-  const { cartItems, cartCount, cartTotal, removeFromCart, updateItemQuantity } = useCart();
+  const { cartItems, cartCount, cartTotal, removeFromCart, updateItemQuantity, loading: cartLoading } = useCart();
 
   return (
     <Sheet>
@@ -67,6 +67,7 @@ export default function Cart() {
                             size="icon"
                             className="h-7 w-7"
                             onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
+                            disabled={cartLoading}
                           >
                             <Minus className="h-4 w-4" />
                           </Button>
@@ -76,6 +77,7 @@ export default function Cart() {
                             size="icon"
                             className="h-7 w-7"
                             onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
+                            disabled={cartLoading}
                           >
                             <Plus className="h-4 w-4" />
                           </Button>
@@ -86,6 +88,7 @@ export default function Cart() {
                       variant="ghost"
                       size="icon"
                       onClick={() => removeFromCart(item.id)}
+                      disabled={cartLoading}
                     >
                       <Trash2 className="h-5 w-5 text-muted-foreground" />
                       <span className="sr-only">Remove item</span>
@@ -101,13 +104,20 @@ export default function Cart() {
                         <p>Total</p>
                         <p>${cartTotal.toFixed(2)}</p>
                     </div>
-                    <Button className="w-full" size="lg">Checkout</Button>
+                    <Button className="w-full" size="lg" disabled={cartLoading || cartCount === 0}>
+                        {cartLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                        Checkout
+                    </Button>
                 </div>
             </SheetFooter>
           </>
         ) : (
           <div className="flex flex-1 items-center justify-center">
-            <p className="text-muted-foreground">Your cart is empty.</p>
+             {cartLoading ? (
+              <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+            ) : (
+              <p className="text-muted-foreground">Your cart is empty.</p>
+            )}
           </div>
         )}
       </SheetContent>
