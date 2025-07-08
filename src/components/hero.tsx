@@ -24,9 +24,9 @@ export default function Hero() {
             </Button>
           </div>
         </div>
-        <div className="relative aspect-[4/4] max-w-xl mx-auto lg:mx-0 lg:max-w-none">
+        <div className="relative aspect-[3/2] max-w-xl mx-auto lg:mx-0 lg:max-w-none">
            <Image
-            src="https://placehold.co/800x800.png"
+            src="https://placehold.co/1200x800.png"
             alt="Fashion model"
             fill
             className="object-cover rounded-lg shadow-2xl"
