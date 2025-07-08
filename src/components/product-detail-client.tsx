@@ -69,7 +69,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
         </div>
         <div className="flex flex-col">
           <h1 className="text-3xl md:text-4xl font-bold font-headline">{product.name}</h1>
-          <p className="text-2xl font-semibold text-primary mt-2">${product.price.toFixed(2)}</p>
+          <p className="text-2xl font-semibold text-primary mt-2">₹{product.price.toFixed(2)}</p>
           <Separator className="my-6" />
           <p className="text-muted-foreground leading-relaxed">{product.description}</p>
           <Button onClick={handleAddToCart} size="lg" className="mt-8 w-full md:w-auto" disabled={isCartLoading}>

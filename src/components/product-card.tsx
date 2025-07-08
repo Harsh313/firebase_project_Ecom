@@ -19,12 +19,12 @@ export default function ProductCard({ product }: ProductCardProps) {
     <Link href={`/products/${product.id}`} className="group">
       <Card className="h-full overflow-hidden transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1">
         <CardHeader className="p-0">
-          <div className="aspect-square w-full overflow-hidden">
+          <div className="aspect-[3/4] w-full overflow-hidden">
             <Image
               src={product.images[0]}
               alt={product.name}
               width={600}
-              height={600}
+              height={800}
               className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
               data-ai-hint="clothing fashion"
             />
@@ -37,7 +37,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </CardDescription>
         </CardContent>
         <CardFooter className="p-4 pt-0">
-          <p className="text-base font-bold text-primary">${product.price.toFixed(2)}</p>
+          <p className="text-base font-bold text-primary">₹{product.price.toFixed(2)}</p>
         </CardFooter>
       </Card>
     </Link>

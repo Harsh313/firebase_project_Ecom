@@ -59,7 +59,7 @@ export default function Cart() {
                       <div>
                         <p className="font-medium">{item.name}</p>
                         <p className="text-sm text-muted-foreground">
-                          ${item.price.toFixed(2)}
+                          ₹{item.price.toFixed(2)}
                         </p>
                         <div className="flex items-center gap-2 mt-2">
                           <Button
@@ -102,7 +102,7 @@ export default function Cart() {
                 <div className="w-full">
                     <div className="flex justify-between text-lg font-semibold mb-4">
                         <p>Total</p>
-                        <p>${cartTotal.toFixed(2)}</p>
+                        <p>₹{cartTotal.toFixed(2)}</p>
                     </div>
                     <Button className="w-full" size="lg" disabled={cartLoading || cartCount === 0}>
                         {cartLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
