@@ -15,7 +15,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { User as UserIcon, Shirt, PlusCircle } from 'lucide-react';
+import { User as UserIcon, Shirt, PlusCircle, Download } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -59,6 +59,14 @@ const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
                   <Link href="#">Kids</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+                  <a href="/catalog.pdf" target="_blank" rel="noopener noreferrer">
+                    <Download className="mr-2 h-4 w-4" />
+                    Catalog
+                  </a>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
