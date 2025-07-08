@@ -1,6 +1,6 @@
 import type { Product } from './types';
 import { db } from './firebase';
-import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
+import { collection, getDocs, doc, getDoc, addDoc, serverTimestamp } from 'firebase/firestore';
 
 export const getProducts = async (): Promise<Product[]> => {
   try {
@@ -27,5 +27,20 @@ export const getProductById = async (id: string): Promise<Product | undefined> =
   } catch (error) {
     console.error("Error fetching product by ID: ", error);
     return undefined;
+  }
+};
+
+export const addProduct = async (productData: Omit<Product, 'id' | 'reviews'>): Promise<string> => {
+  try {
+    const productsCol = collection(db, 'products');
+    const docRef = await addDoc(productsCol, {
+      ...productData,
+      reviews: [],
+      createdAt: serverTimestamp(),
+    });
+    return docRef.id;
+  } catch (error) {
+    console.error("Error adding product: ", error);
+    throw new Error("Failed to add product.");
   }
 };

@@ -16,7 +16,7 @@ import {
 import { Wand2, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
-const VIEWED_PRODUCTS_STORAGE_KEY = 'verdant-viewed-products';
+const VIEWED_PRODUCTS_STORAGE_KEY = 'chich-threads-viewed-products';
 
 export default function ProductRecommendation() {
   const [isLoading, setIsLoading] = useState(false);

@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/carousel';
 import type { Product } from '@/lib/types';
 
-const VIEWED_PRODUCTS_STORAGE_KEY = 'verdant-viewed-products';
+const VIEWED_PRODUCTS_STORAGE_KEY = 'chich-threads-viewed-products';
 
 interface ProductDetailClientProps {
   product: Product;
@@ -57,7 +57,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                       alt={`${product.name} image ${index + 1}`}
                       fill
                       className="object-cover"
-                      data-ai-hint="plant product"
+                      data-ai-hint="clothing fashion"
                     />
                   </div>
                 </CarouselItem>
@@ -80,7 +80,8 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
           <div className="mt-10">
             <h2 className="text-2xl font-bold font-headline mb-4">Reviews</h2>
             <div className="space-y-6">
-              {product.reviews.map((review, index) => (
+              {product.reviews && product.reviews.length > 0 ? (
+                product.reviews.map((review, index) => (
                 <div key={index} className="border-l-4 border-primary pl-4">
                   <div className="flex items-center mb-1">
                     {Array.from({ length: 5 }).map((_, i) => (
@@ -95,7 +96,9 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                   </div>
                   <p className="text-muted-foreground italic">"{review.text}"</p>
                 </div>
-              ))}
+              ))) : (
+                <p className='text-muted-foreground'>No reviews yet.</p>
+              )}
             </div>
           </div>
         </div>

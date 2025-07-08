@@ -53,7 +53,7 @@ export default function Cart() {
                           alt={item.name}
                           fill
                           className="object-cover"
-                          data-ai-hint="plant product"
+                          data-ai-hint="clothing fashion"
                         />
                       </div>
                       <div>

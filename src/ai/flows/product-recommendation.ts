@@ -19,8 +19,8 @@ const RecommendProductInputSchema = z.object({
 export type RecommendProductInput = z.infer<typeof RecommendProductInputSchema>;
 
 const RecommendProductOutputSchema = z.object({
-  productName: z.string().describe('The recommended product name.'),
-  reason: z.string().describe('The reason for the recommendation.'),
+  productName: z.string().describe('The recommended clothing item name.'),
+  reason: z.string().describe('The reason for the recommendation, explaining why it complements the user\'s style.'),
 });
 export type RecommendProductOutput = z.infer<typeof RecommendProductOutputSchema>;
 
@@ -32,9 +32,9 @@ const prompt = ai.definePrompt({
   name: 'recommendProductPrompt',
   input: {schema: RecommendProductInputSchema},
   output: {schema: RecommendProductOutputSchema},
-  prompt: `You are a product recommendation expert.
+  prompt: `You are a fashion stylist and personal shopper.
 
-  Based on the user's browsing history, recommend a product and explain why.
+  Based on the user's browsing history of clothing items, recommend another clothing item and explain why it would be a good addition to their wardrobe.
 
   Browsing History: {{{browsingHistory}}}
   `,

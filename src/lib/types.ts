@@ -4,6 +4,7 @@ export interface Product {
   description: string;
   price: number;
   images: string[];
+  sellerId: string;
   reviews: {
     rating: number;
     text: string;

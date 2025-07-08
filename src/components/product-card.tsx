@@ -26,7 +26,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               width={600}
               height={600}
               className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-              data-ai-hint="plant product"
+              data-ai-hint="clothing fashion"
             />
           </div>
         </CardHeader>

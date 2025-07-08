@@ -6,8 +6,8 @@ import { AuthProvider } from '@/context/auth-provider';
 import Header from '@/components/header';
 
 export const metadata: Metadata = {
-  title: 'Verdant',
-  description: 'A modern e-commerce app for browsing and purchasing products.',
+  title: 'Chic Threads',
+  description: 'Your one-stop shop for the latest fashion trends.',
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap"
           rel="stylesheet"
         ></link>
       </head>

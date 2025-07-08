@@ -8,7 +8,7 @@ export default async function Home() {
     <div className="container mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl md:text-4xl font-bold font-headline">
-          Our Collection
+          New Arrivals
         </h1>
         <ProductRecommendation />
       </div>
