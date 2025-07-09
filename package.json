@@ -6,11 +6,7 @@
     "dev": "next dev --turbopack -p 9002",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
     "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
-<<<<<<< HEAD
     "build": "next build && next export",
-=======
-    "build": "next build",
->>>>>>> 48e6f1cc74e7403930bae2267630178962778f5f
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
