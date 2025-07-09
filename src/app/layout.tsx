@@ -6,7 +6,11 @@ import { AuthProvider } from '@/context/auth-provider';
 import Header from '@/components/header';
 
 export const metadata: Metadata = {
+<<<<<<< HEAD
   title: 'Tanabana - Your Fashion Destination',
+=======
+  title: 'Chic Threads',
+>>>>>>> 48e6f1cc74e7403930bae2267630178962778f5f
   description: 'Your one-stop shop for the latest fashion trends.',
 };
 
