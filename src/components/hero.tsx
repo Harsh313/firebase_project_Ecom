@@ -9,7 +9,7 @@ export default function Hero() {
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
           <h1 className="text-4xl md:text-6xl font-extrabold font-headline text-foreground tracking-tight">
             Discover Your
-            <br />
+            <br /> 
             <span className="text-primary">Signature Style</span>
           </h1>
           <p className="mt-4 max-w-xl text-lg text-muted-foreground">
