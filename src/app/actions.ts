@@ -5,7 +5,7 @@ import type { RecommendProductOutput } from '@/ai/flows/product-recommendation';
 import { addProduct as addProductToDb } from '@/lib/products';
 import type { Product } from '@/lib/types';
 
-export async function getProductRecommendation(
+export async function getProductRecommendation( 
   { browsingHistory }: { browsingHistory: string }
 ): Promise<RecommendProductOutput> {
   try {
