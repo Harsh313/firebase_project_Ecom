@@ -37,11 +37,7 @@ const Header = () => {
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center space-x-2">
             <Shirt className="h-6 w-6 text-primary" />
-<<<<<<< HEAD
             <span className="font-bold text-lg font-headline">TanaBana</span>
-=======
-            <span className="font-bold text-lg font-headline">Chic Threads</span>
->>>>>>> 48e6f1cc74e7403930bae2267630178962778f5f
           </Link>
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
