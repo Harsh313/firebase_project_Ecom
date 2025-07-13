@@ -23,9 +23,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  output: 'export', // ✅ Add this line to support static export (no `next export` needed)
   webpack: (config, { isServer }) => {
     if (!isServer) {
-      // Fix for handlebars and other Node.js-only packages
       config.resolve.fallback = {
         ...config.resolve.fallback,
         fs: false,
@@ -34,7 +34,6 @@ const nextConfig: NextConfig = {
         module: false,
       };
     }
-
     return config;
   },
 };
