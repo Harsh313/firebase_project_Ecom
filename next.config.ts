@@ -23,6 +23,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Fix for handlebars and other Node.js-only packages
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        path: false,
+        os: false,
+        module: false,
+      };
+    }
+
+    return config;
+  },
 };
 
 export default nextConfig;
