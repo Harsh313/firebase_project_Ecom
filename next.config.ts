@@ -23,7 +23,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  output: 'export', // ✅ Add this line to support static export (no `next export` needed)
+  // ❌ Removed `output: 'export'` because of dynamic route /products/[id]
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = {
